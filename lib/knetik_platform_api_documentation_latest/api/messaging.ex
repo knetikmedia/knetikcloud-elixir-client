@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Send a raw email to one or more users
+
+  
+  """
   def send_raw_email(raw_email_resource) do
     method = [method: :post]
     url = [url: "/messaging/raw-email"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
     request(options)
   end
 
+  @doc """
+  Send a raw SMS
+
+  Sends a raw SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped.
+  """
   def send_raw_sms(raw_sms_resource) do
     method = [method: :post]
     url = [url: "/messaging/raw-sms"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
     request(options)
   end
 
+  @doc """
+  Send a templated email to one or more users
+
+  
+  """
   def send_templated_email(message_resource) do
     method = [method: :post]
     url = [url: "/messaging/templated-email"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
     request(options)
   end
 
+  @doc """
+  Send a new templated SMS
+
+  Sends a templated SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped.
+  """
   def send_templated_sms(template_sms_resource) do
     method = [method: :post]
     url = [url: "/messaging/templated-sms"]

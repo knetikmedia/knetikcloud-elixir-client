@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationMetrics do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Add a metric
+
+  Post a new score/stat for an activity occurrence without ending the occurrence itself
+  """
   def add_metric(metric) do
     method = [method: :post]
     url = [url: "/metrics"]

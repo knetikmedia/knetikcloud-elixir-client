@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Dispositions do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Add a new disposition
+
+  
+  """
   def add_disposition(disposition) do
     method = [method: :post]
     url = [url: "/dispositions"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Dispositions do
     request(options)
   end
 
+  @doc """
+  Delete a disposition
+
+  
+  """
   def delete_disposition(id) do
     method = [method: :delete]
     url = [url: "/dispositions/#{id}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Dispositions do
     request(options)
   end
 
+  @doc """
+  Returns a disposition
+
+  
+  """
   def get_disposition(id) do
     method = [method: :get]
     url = [url: "/dispositions/#{id}"]
@@ -50,10 +65,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Dispositions do
     request(options)
   end
 
+  @doc """
+  Returns a list of disposition counts
+
+  
+  """
   def get_disposition_counts(filter_context, filter_owner) do
     method = [method: :get]
     url = [url: "/dispositions/count"]
-    query_params = [query: [{:"filterContext", filter_context}, {:"filterOwner", filter_owner}]]
+    query_params = [query: [{:"filter_context", filter_context}, {:"filter_owner", filter_owner}]]
     header_params = []
     body_params = []
     form_params = []
@@ -64,10 +84,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Dispositions do
     request(options)
   end
 
+  @doc """
+  Returns a page of dispositions
+
+  
+  """
   def get_dispositions(filter_context, filter_owner, size, page, order) do
     method = [method: :get]
     url = [url: "/dispositions"]
-    query_params = [query: [{:"filterContext", filter_context}, {:"filterOwner", filter_owner}, {:"size", size}, {:"page", page}, {:"order", order}]]
+    query_params = [query: [{:"filter_context", filter_context}, {:"filter_owner", filter_owner}, {:"size", size}, {:"page", page}, {:"order", order}]]
     header_params = []
     body_params = []
     form_params = []

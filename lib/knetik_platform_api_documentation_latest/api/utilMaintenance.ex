@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilMaintenance do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Delete maintenance info
+
+  
+  """
   def delete_maintenance() do
     method = [method: :delete]
     url = [url: "/maintenance"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilMaintenance do
     request(options)
   end
 
+  @doc """
+  Get current maintenance info
+
+  Get current maintenance info. 404 if no maintenance.
+  """
   def get_maintenance() do
     method = [method: :get]
     url = [url: "/maintenance"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilMaintenance do
     request(options)
   end
 
+  @doc """
+  Set current maintenance info
+
+  
+  """
   def set_maintenance(maintenance) do
     method = [method: :post]
     url = [url: "/maintenance"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilMaintenance do
     request(options)
   end
 
+  @doc """
+  Update current maintenance info
+
+  
+  """
   def update_maintenance(maintenance) do
     method = [method: :put]
     url = [url: "/maintenance"]

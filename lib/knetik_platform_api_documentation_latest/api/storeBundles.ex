@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a bundle item
+
+  The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+  """
   def create_bundle_item(cascade, bundle_item) do
     method = [method: :post]
     url = [url: "/store/bundles"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  Create a bundle template
+
+  Bundle Templates define a type of bundle and the properties they have.
+  """
   def create_bundle_template(bundle_template_resource) do
     method = [method: :post]
     url = [url: "/store/bundles/templates"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  Delete a bundle item
+
+  
+  """
   def delete_bundle_item(id) do
     method = [method: :delete]
     url = [url: "/store/bundles/#{id}"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  Delete a bundle template
+
+  
+  """
   def delete_bundle_template(id, cascade) do
     method = [method: :delete]
     url = [url: "/store/bundles/templates/#{id}"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  Get a single bundle item
+
+  
+  """
   def get_bundle_item(id) do
     method = [method: :get]
     url = [url: "/store/bundles/#{id}"]
@@ -78,6 +103,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  Get a single bundle template
+
+  Bundle Templates define a type of bundle and the properties they have.
+  """
   def get_bundle_template(id) do
     method = [method: :get]
     url = [url: "/store/bundles/templates/#{id}"]
@@ -92,6 +122,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  List and search bundle templates
+
+  
+  """
   def get_bundle_templates(size, page, order) do
     method = [method: :get]
     url = [url: "/store/bundles/templates"]
@@ -106,6 +141,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  Update a bundle item
+
+  
+  """
   def update_bundle_item(id, cascade, bundle_item) do
     method = [method: :put]
     url = [url: "/store/bundles/#{id}"]
@@ -120,6 +160,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreBundles do
     request(options)
   end
 
+  @doc """
+  Update a bundle template
+
+  
+  """
   def update_bundle_template(id, bundle_template_resource) do
     method = [method: :put]
     url = [url: "/store/bundles/templates/#{id}"]

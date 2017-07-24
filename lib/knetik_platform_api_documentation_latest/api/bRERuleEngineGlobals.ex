@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineGlobals do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a global definition
+
+  Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+  """
   def create_bre_global(bre_global_resource) do
     method = [method: :post]
     url = [url: "/bre/globals/definitions"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineGlobals do
     request(options)
   end
 
+  @doc """
+  Delete a global
+
+  May fail if there are existing rules against it. Cannot delete core globals
+  """
   def delete_bre_global(id) do
     method = [method: :delete]
     url = [url: "/bre/globals/definitions/#{id}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineGlobals do
     request(options)
   end
 
+  @doc """
+  Get a single global definition
+
+  
+  """
   def get_bre_global(id) do
     method = [method: :get]
     url = [url: "/bre/globals/definitions/#{id}"]
@@ -50,10 +65,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineGlobals do
     request(options)
   end
 
+  @doc """
+  List global definitions
+
+  
+  """
   def get_bre_globals(filter_system, size, page) do
     method = [method: :get]
     url = [url: "/bre/globals/definitions"]
-    query_params = [query: [{:"filterSystem", filter_system}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"filter_system", filter_system}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineGlobals do
     request(options)
   end
 
+  @doc """
+  Update a global definition
+
+  May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+  """
   def update_bre_global(id, bre_global_resource) do
     method = [method: :put]
     url = [url: "/bre/globals/definitions/#{id}"]

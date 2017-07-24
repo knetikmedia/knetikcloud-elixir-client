@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilHealth do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Get health info
+
+  
+  """
   def get_health() do
     method = [method: :get]
     url = [url: "/health"]

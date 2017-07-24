@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsGoogle do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Mark an invoice paid with Google
+
+  Mark an invoice paid with Google. Verifies signature from Google and treats the developerPayload field inside the json payload as the id of the invoice to pay. Returns the transaction ID if successful.
+  """
   def handle_google_payment(request) do
     method = [method: :post]
     url = [url: "/payment/provider/google/payments"]

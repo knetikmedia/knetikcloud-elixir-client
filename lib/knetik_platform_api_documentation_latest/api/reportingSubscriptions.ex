@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingSubscriptions do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Get a list of available subscription reports in most recent first order
+
+  
+  """
   def get_subscription_reports(size, page) do
     method = [method: :get]
     url = [url: "/reporting/subscription"]

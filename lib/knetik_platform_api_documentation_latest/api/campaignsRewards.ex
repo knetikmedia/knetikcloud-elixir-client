@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a reward set
+
+  
+  """
   def create_reward_set(reward_set_resource) do
     method = [method: :post]
     url = [url: "/rewards"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
     request(options)
   end
 
+  @doc """
+  Delete a reward set
+
+  
+  """
   def delete_reward_set(id) do
     method = [method: :delete]
     url = [url: "/rewards/#{id}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
     request(options)
   end
 
+  @doc """
+  Get a single reward set
+
+  
+  """
   def get_reward_set(id) do
     method = [method: :get]
     url = [url: "/rewards/#{id}"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
     request(options)
   end
 
+  @doc """
+  List and search reward sets
+
+  
+  """
   def get_reward_sets(size, page, order) do
     method = [method: :get]
     url = [url: "/rewards"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
     request(options)
   end
 
+  @doc """
+  Update a reward set
+
+  
+  """
   def update_reward_set(id, reward_set_resource) do
     method = [method: :put]
     url = [url: "/rewards/#{id}"]

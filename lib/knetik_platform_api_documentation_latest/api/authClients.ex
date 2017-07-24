@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a new client
+
+  
+  """
   def create_client(client_resource) do
     method = [method: :post]
     url = [url: "/auth/clients"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
     request(options)
   end
 
+  @doc """
+  Delete a client
+
+  
+  """
   def delete_client(client_key) do
     method = [method: :delete]
     url = [url: "/auth/clients/#{client_key}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
     request(options)
   end
 
+  @doc """
+  Get a single client
+
+  
+  """
   def get_client(client_key) do
     method = [method: :get]
     url = [url: "/auth/clients/#{client_key}"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
     request(options)
   end
 
+  @doc """
+  List available client grant types
+
+  
+  """
   def get_client_grant_types() do
     method = [method: :get]
     url = [url: "/auth/clients/grant-types"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
     request(options)
   end
 
+  @doc """
+  List and search clients
+
+  
+  """
   def get_clients(size, page, order) do
     method = [method: :get]
     url = [url: "/auth/clients"]
@@ -78,6 +103,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
     request(options)
   end
 
+  @doc """
+  Set grant types for a client
+
+  
+  """
   def set_client_grant_types(client_key, grant_list) do
     method = [method: :put]
     url = [url: "/auth/clients/#{client_key}/grant-types"]
@@ -92,6 +122,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
     request(options)
   end
 
+  @doc """
+  Set redirect uris for a client
+
+  
+  """
   def set_client_redirect_uris(client_key, redirect_list) do
     method = [method: :put]
     url = [url: "/auth/clients/#{client_key}/redirect-uris"]
@@ -106,6 +141,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
     request(options)
   end
 
+  @doc """
+  Update a client
+
+  
+  """
   def update_client(client_key, client_resource) do
     method = [method: :put]
     url = [url: "/auth/clients/#{client_key}"]

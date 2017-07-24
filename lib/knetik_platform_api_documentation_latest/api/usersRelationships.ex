@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a user relationship
+
+  
+  """
   def create_user_relationship(relationship) do
     method = [method: :post]
     url = [url: "/users/relationships"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
     request(options)
   end
 
+  @doc """
+  Delete a user relationship
+
+  
+  """
   def delete_user_relationship(id) do
     method = [method: :delete]
     url = [url: "/users/relationships/#{id}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
     request(options)
   end
 
+  @doc """
+  Get a user relationship
+
+  
+  """
   def get_user_relationship(id) do
     method = [method: :get]
     url = [url: "/users/relationships/#{id}"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
     request(options)
   end
 
+  @doc """
+  Get a list of user relationships
+
+  
+  """
   def get_user_relationships(size, page, order) do
     method = [method: :get]
     url = [url: "/users/relationships"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
     request(options)
   end
 
+  @doc """
+  Update a user relationship
+
+  
+  """
   def update_user_relationship(id, relationship) do
     method = [method: :put]
     url = [url: "/users/relationships/#{id}"]

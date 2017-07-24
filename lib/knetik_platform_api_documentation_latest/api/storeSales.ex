@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a sale
+
+  
+  """
   def create_catalog_sale(catalog_sale) do
     method = [method: :post]
     url = [url: "/store/sales"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
     request(options)
   end
 
+  @doc """
+  Delete a sale
+
+  
+  """
   def delete_catalog_sale(id) do
     method = [method: :delete]
     url = [url: "/store/sales/#{id}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
     request(options)
   end
 
+  @doc """
+  Get a single sale
+
+  
+  """
   def get_catalog_sale(id) do
     method = [method: :get]
     url = [url: "/store/sales/#{id}"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
     request(options)
   end
 
+  @doc """
+  List and search sales
+
+  
+  """
   def get_catalog_sales(size, page, order) do
     method = [method: :get]
     url = [url: "/store/sales"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
     request(options)
   end
 
+  @doc """
+  Update a sale
+
+  
+  """
   def update_catalog_sale(id, catalog_sale) do
     method = [method: :put]
     url = [url: "/store/sales/#{id}"]

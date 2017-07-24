@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineVariables do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Get a list of variable types available
+
+  Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+  """
   def get_bre_variable_types() do
     method = [method: :get]
     url = [url: "/bre/variable-types"]
@@ -22,10 +27,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineVariables do
     request(options)
   end
 
+  @doc """
+  List valid values for a type
+
+  Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+  """
   def get_bre_variable_values(name, filter_name, size, page) do
     method = [method: :get]
     url = [url: "/bre/variable-types/#{name}/values"]
-    query_params = [query: [{:"filterName", filter_name}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"filter_name", filter_name}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []

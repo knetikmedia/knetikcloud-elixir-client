@@ -8,12 +8,17 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.SocialGoogle do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
-  def link_accounts1(facebook_token) do
+  @doc """
+  Link google account
+
+  Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+  """
+  def link_accounts1(google_token) do
     method = [method: :post]
     url = [url: "/social/google/users"]
     query_params = []
     header_params = []
-    body_params = [body: facebook_token]
+    body_params = [body: google_token]
     form_params = []
     params = query_params ++ header_params ++ body_params ++ form_params
     opts = []

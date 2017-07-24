@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a challenge
+
+  Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+  """
   def create_challenge(challenge_resource) do
     method = [method: :post]
     url = [url: "/challenges"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Create a challenge activity
+
+  
+  """
   def create_challenge_activity(challenge_id, challenge_activity_resource, validate_settings) do
     method = [method: :post]
     url = [url: "/challenges/#{challenge_id}/activities"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Create a challenge activity template
+
+  Challenge Activity Templates define a type of challenge activity and the properties they have
+  """
   def create_challenge_activity_template(challenge_activity_template_resource) do
     method = [method: :post]
     url = [url: "/challenge-activities/templates"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Create a challenge template
+
+  Challenge Templates define a type of challenge and the properties they have
+  """
   def create_challenge_template(challenge_template_resource) do
     method = [method: :post]
     url = [url: "/challenges/templates"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Delete a challenge
+
+  
+  """
   def delete_challenge(id) do
     method = [method: :delete]
     url = [url: "/challenges/#{id}"]
@@ -78,9 +103,14 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
-  def delete_challenge_activity(activity_id, challenge_id) do
+  @doc """
+  Delete a challenge activity
+
+  A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  """
+  def delete_challenge_activity(id, challenge_id) do
     method = [method: :delete]
-    url = [url: "/challenges/{challenge_id}/activities/#{activity_id}"]
+    url = [url: "/challenges/{challenge_id}/activities/#{id}"]
     query_params = []
     header_params = []
     body_params = []
@@ -92,6 +122,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Delete a challenge activity template
+
+  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  """
   def delete_challenge_activity_template(id, cascade) do
     method = [method: :delete]
     url = [url: "/challenge-activities/templates/#{id}"]
@@ -106,6 +141,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Delete a challenge event
+
+  
+  """
   def delete_challenge_event(id) do
     method = [method: :delete]
     url = [url: "/challenges/events/#{id}"]
@@ -120,6 +160,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Delete a challenge template
+
+  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  """
   def delete_challenge_template(id, cascade) do
     method = [method: :delete]
     url = [url: "/challenges/templates/#{id}"]
@@ -134,6 +179,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Retrieve a challenge
+
+  
+  """
   def get_challenge(id) do
     method = [method: :get]
     url = [url: "/challenges/#{id}"]
@@ -148,6 +198,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  List and search challenge activities
+
+  
+  """
   def get_challenge_activities(challenge_id, size, page, order) do
     method = [method: :get]
     url = [url: "/challenges/#{challenge_id}/activities"]
@@ -162,9 +217,14 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
-  def get_challenge_activity(activity_id) do
+  @doc """
+  Get a single challenge activity
+
+  A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  """
+  def get_challenge_activity(id, challenge_id) do
     method = [method: :get]
-    url = [url: "/challenges/{challenge_id}/activities/#{activity_id}"]
+    url = [url: "/challenges/{challenge_id}/activities/#{id}"]
     query_params = []
     header_params = []
     body_params = []
@@ -176,6 +236,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Get a single challenge activity template
+
+  
+  """
   def get_challenge_activity_template(id) do
     method = [method: :get]
     url = [url: "/challenge-activities/templates/#{id}"]
@@ -190,6 +255,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  List and search challenge activity templates
+
+  
+  """
   def get_challenge_activity_templates(size, page, order) do
     method = [method: :get]
     url = [url: "/challenge-activities/templates"]
@@ -204,6 +274,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Retrieve a single challenge event details
+
+  
+  """
   def get_challenge_event(id) do
     method = [method: :get]
     url = [url: "/challenges/events/#{id}"]
@@ -218,10 +293,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Retrieve a list of challenge events
+
+  
+  """
   def get_challenge_events(filter_start_date, filter_end_date, filter_campaigns, filter_challenge, size, page, order) do
     method = [method: :get]
     url = [url: "/challenges/events"]
-    query_params = [query: [{:"filterStartDate", filter_start_date}, {:"filterEndDate", filter_end_date}, {:"filterCampaigns", filter_campaigns}, {:"filterChallenge", filter_challenge}, {:"size", size}, {:"page", page}, {:"order", order}]]
+    query_params = [query: [{:"filter_start_date", filter_start_date}, {:"filter_end_date", filter_end_date}, {:"filter_campaigns", filter_campaigns}, {:"filter_challenge", filter_challenge}, {:"size", size}, {:"page", page}, {:"order", order}]]
     header_params = []
     body_params = []
     form_params = []
@@ -232,6 +312,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Get a single challenge template
+
+  
+  """
   def get_challenge_template(id) do
     method = [method: :get]
     url = [url: "/challenges/templates/#{id}"]
@@ -246,6 +331,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  List and search challenge templates
+
+  
+  """
   def get_challenge_templates(size, page, order) do
     method = [method: :get]
     url = [url: "/challenges/templates"]
@@ -260,10 +350,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Retrieve a list of challenges
+
+  
+  """
   def get_challenges(filter_template, filter_active_campaign, filter_start_date, filter_end_date, size, page, order) do
     method = [method: :get]
     url = [url: "/challenges"]
-    query_params = [query: [{:"filterTemplate", filter_template}, {:"filterActiveCampaign", filter_active_campaign}, {:"filterStartDate", filter_start_date}, {:"filterEndDate", filter_end_date}, {:"size", size}, {:"page", page}, {:"order", order}]]
+    query_params = [query: [{:"filter_template", filter_template}, {:"filter_active_campaign", filter_active_campaign}, {:"filter_start_date", filter_start_date}, {:"filter_end_date", filter_end_date}, {:"size", size}, {:"page", page}, {:"order", order}]]
     header_params = []
     body_params = []
     form_params = []
@@ -274,6 +369,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Update a challenge
+
+  If the challenge is a copy, changes will propagate to all the related challenges
+  """
   def update_challenge(id, challenge_resource) do
     method = [method: :put]
     url = [url: "/challenges/#{id}"]
@@ -288,9 +388,14 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
-  def update_challenge_activity(activity_id, challenge_id, challenge_activity_resource) do
+  @doc """
+  Update a challenge activity
+
+  A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+  """
+  def update_challenge_activity(id, challenge_id, challenge_activity_resource) do
     method = [method: :put]
-    url = [url: "/challenges/{challenge_id}/activities/#{activity_id}"]
+    url = [url: "/challenges/{challenge_id}/activities/#{id}"]
     query_params = []
     header_params = []
     body_params = [body: challenge_activity_resource]
@@ -302,6 +407,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Update an challenge activity template
+
+  
+  """
   def update_challenge_activity_template(id, challenge_activity_template_resource) do
     method = [method: :put]
     url = [url: "/challenge-activities/templates/#{id}"]
@@ -316,6 +426,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
     request(options)
   end
 
+  @doc """
+  Update a challenge template
+
+  
+  """
   def update_challenge_template(id, challenge_template_resource) do
     method = [method: :put]
     url = [url: "/challenges/templates/#{id}"]

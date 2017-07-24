@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilVersion do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Get current version info
+
+  
+  """
   def get_version() do
     method = [method: :get]
     url = [url: "/version"]

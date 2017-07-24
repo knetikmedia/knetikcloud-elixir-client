@@ -8,10 +8,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Returns aggregated endpoint usage information by day
+
+  
+  """
   def get_usage_by_day(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
     url = [url: "/reporting/usage/day"]
-    query_params = [query: [{:"startDate", start_date}, {:"endDate", end_date}, {:"combineEndpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"start_date", start_date}, {:"end_date", end_date}, {:"combine_endpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []
@@ -22,10 +27,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
     request(options)
   end
 
+  @doc """
+  Returns aggregated endpoint usage information by hour
+
+  
+  """
   def get_usage_by_hour(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
     url = [url: "/reporting/usage/hour"]
-    query_params = [query: [{:"startDate", start_date}, {:"endDate", end_date}, {:"combineEndpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"start_date", start_date}, {:"end_date", end_date}, {:"combine_endpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []
@@ -36,10 +46,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
     request(options)
   end
 
+  @doc """
+  Returns aggregated endpoint usage information by minute
+
+  
+  """
   def get_usage_by_minute(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
     url = [url: "/reporting/usage/minute"]
-    query_params = [query: [{:"startDate", start_date}, {:"endDate", end_date}, {:"combineEndpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"start_date", start_date}, {:"end_date", end_date}, {:"combine_endpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []
@@ -50,10 +65,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
     request(options)
   end
 
+  @doc """
+  Returns aggregated endpoint usage information by month
+
+  
+  """
   def get_usage_by_month(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
     url = [url: "/reporting/usage/month"]
-    query_params = [query: [{:"startDate", start_date}, {:"endDate", end_date}, {:"combineEndpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"start_date", start_date}, {:"end_date", end_date}, {:"combine_endpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []
@@ -64,10 +84,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
     request(options)
   end
 
+  @doc """
+  Returns aggregated endpoint usage information by year
+
+  
+  """
   def get_usage_by_year(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
     url = [url: "/reporting/usage/year"]
-    query_params = [query: [{:"startDate", start_date}, {:"endDate", end_date}, {:"combineEndpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"start_date", start_date}, {:"end_date", end_date}, {:"combine_endpoints", combine_endpoints}, {:"method", method}, {:"url", url}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []
@@ -78,10 +103,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
     request(options)
   end
 
+  @doc """
+  Returns list of endpoints called (method and url)
+
+  
+  """
   def get_usage_endpoints(start_date, end_date) do
     method = [method: :get]
     url = [url: "/reporting/usage/endpoints"]
-    query_params = [query: [{:"startDate", start_date}, {:"endDate", end_date}]]
+    query_params = [query: [{:"start_date", start_date}, {:"end_date", end_date}]]
     header_params = []
     body_params = []
     form_params = []

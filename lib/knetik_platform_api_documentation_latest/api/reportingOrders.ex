@@ -8,10 +8,15 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingOrders do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Retrieve invoice counts aggregated by time ranges
+
+  
+  """
   def get_invoice_reports(currency_code, granularity, filter_payment_status, filter_fulfillment_status, start_date, end_date, size, page) do
     method = [method: :get]
     url = [url: "/reporting/orders/count/#{currency_code}"]
-    query_params = [query: [{:"granularity", granularity}, {:"filterPaymentStatus", filter_payment_status}, {:"filterFulfillmentStatus", filter_fulfillment_status}, {:"startDate", start_date}, {:"endDate", end_date}, {:"size", size}, {:"page", page}]]
+    query_params = [query: [{:"granularity", granularity}, {:"filter_payment_status", filter_payment_status}, {:"filter_fulfillment_status", filter_fulfillment_status}, {:"start_date", start_date}, {:"end_date", end_date}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
     form_params = []

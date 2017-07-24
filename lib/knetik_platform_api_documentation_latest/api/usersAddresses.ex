@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersAddresses do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a new address
+
+  
+  """
   def create_address(user_id, saved_address_resource) do
     method = [method: :post]
     url = [url: "/users/#{user_id}/addresses"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersAddresses do
     request(options)
   end
 
+  @doc """
+  Delete an address
+
+  
+  """
   def delete_address(user_id, id) do
     method = [method: :delete]
     url = [url: "/users/{user_id}/addresses/#{id}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersAddresses do
     request(options)
   end
 
+  @doc """
+  Get a single address
+
+  
+  """
   def get_address(user_id, id) do
     method = [method: :get]
     url = [url: "/users/{user_id}/addresses/#{id}"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersAddresses do
     request(options)
   end
 
+  @doc """
+  List and search addresses
+
+  
+  """
   def get_addresses(user_id, size, page, order) do
     method = [method: :get]
     url = [url: "/users/#{user_id}/addresses"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersAddresses do
     request(options)
   end
 
+  @doc """
+  Update an address
+
+  
+  """
   def update_address(user_id, id, saved_address_resource) do
     method = [method: :put]
     url = [url: "/users/{user_id}/addresses/#{id}"]

@@ -8,6 +8,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
   plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
+  @doc """
+  Create a fulfillment type
+
+  
+  """
   def create_fulfillment_type(type) do
     method = [method: :post]
     url = [url: "/store/fulfillment/types"]
@@ -22,6 +27,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
     request(options)
   end
 
+  @doc """
+  Delete a fulfillment type
+
+  
+  """
   def delete_fulfillment_type(id) do
     method = [method: :delete]
     url = [url: "/store/fulfillment/types/#{id}"]
@@ -36,6 +46,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
     request(options)
   end
 
+  @doc """
+  Get a single fulfillment type
+
+  
+  """
   def get_fulfillment_type(id) do
     method = [method: :get]
     url = [url: "/store/fulfillment/types/#{id}"]
@@ -50,6 +65,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
     request(options)
   end
 
+  @doc """
+  List and search fulfillment types
+
+  
+  """
   def get_fulfillment_types(size, page, order) do
     method = [method: :get]
     url = [url: "/store/fulfillment/types"]
@@ -64,6 +84,11 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
     request(options)
   end
 
+  @doc """
+  Update a fulfillment type
+
+  
+  """
   def update_fulfillment_type(id, fulfillment_type) do
     method = [method: :put]
     url = [url: "/store/fulfillment/types/#{id}"]
