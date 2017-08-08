@@ -199,6 +199,25 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Store do
   end
 
   @doc """
+  One-step purchase and pay for a single SKU item from a user&#39;s wallet
+
+  Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+  """
+  def quick_buy(quick_buy_request) do
+    method = [method: :post]
+    url = [url: "/store/quick-buy"]
+    query_params = []
+    header_params = []
+    body_params = [body: quick_buy_request]
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
   Update an item template
 
   

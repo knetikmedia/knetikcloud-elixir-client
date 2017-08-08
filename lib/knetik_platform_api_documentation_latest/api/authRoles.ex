@@ -89,10 +89,10 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
 
   
   """
-  def get_roles(size, page, order) do
+  def get_roles(filter_name, filter_role, size, page, order) do
     method = [method: :get]
     url = [url: "/auth/roles"]
-    query_params = [query: [{:"size", size}, {:"page", page}, {:"order", order}]]
+    query_params = [query: [{:"filter_name", filter_name}, {:"filter_role", filter_role}, {:"size", size}, {:"page", page}, {:"order", order}]]
     header_params = []
     body_params = []
     form_params = []

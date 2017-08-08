@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersSubscriptions do
   @doc """
   Set the status of a subscription
 
-  The body is a json string (put in quotes) that should match a desired invoice status type. Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+  Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
   """
   def set_subscription_status(user_id, inventory_id, status) do
     method = [method: :put]

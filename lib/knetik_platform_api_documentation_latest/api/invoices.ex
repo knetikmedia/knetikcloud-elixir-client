@@ -123,7 +123,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Invoices do
   end
 
   @doc """
-  Trigger payment of an invoice
+  Pay an invoice using a saved payment method
 
   
   """
