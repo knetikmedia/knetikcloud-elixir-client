@@ -9,9 +9,28 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AmazonWebServicesS3 do
   plug Tesla.Middleware.JSON
 
   @doc """
-  Get a signed S3 URL
+  Get a temporary signed S3 URL for download
 
-  Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
+  To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+  """
+  def get_download_url(bucket, path, expiration) do
+    method = [method: :get]
+    url = [url: "/amazon/s3/downloadurl"]
+    query_params = [query: [{:"bucket", bucket}, {:"path", path}, {:"expiration", expiration}]]
+    header_params = []
+    body_params = []
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
+  Get a signed S3 URL for upload
+
+  Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
   """
   def get_signed_s3_url(filename, content_type) do
     method = [method: :get]

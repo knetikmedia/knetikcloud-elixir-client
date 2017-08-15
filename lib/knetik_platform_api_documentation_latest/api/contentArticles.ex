@@ -146,10 +146,10 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ContentArticles do
 
   Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
   """
-  def get_articles(filter_category, filter_tagset, filter_tag_intersection, filter_tag_exclusion, filter_title, size, page, order) do
+  def get_articles(filter_active_only, filter_category, filter_tagset, filter_tag_intersection, filter_tag_exclusion, filter_title, size, page, order) do
     method = [method: :get]
     url = [url: "/content/articles"]
-    query_params = [query: [{:"filter_category", filter_category}, {:"filter_tagset", filter_tagset}, {:"filter_tag_intersection", filter_tag_intersection}, {:"filter_tag_exclusion", filter_tag_exclusion}, {:"filter_title", filter_title}, {:"size", size}, {:"page", page}, {:"order", order}]]
+    query_params = [query: [{:"filter_active_only", filter_active_only}, {:"filter_category", filter_category}, {:"filter_tagset", filter_tagset}, {:"filter_tag_intersection", filter_tag_intersection}, {:"filter_tag_exclusion", filter_tag_exclusion}, {:"filter_title", filter_title}, {:"size", size}, {:"page", page}, {:"order", order}]]
     header_params = []
     body_params = []
     form_params = []
