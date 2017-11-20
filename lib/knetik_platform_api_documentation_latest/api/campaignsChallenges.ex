@@ -35,7 +35,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
   def create_challenge_activity(challenge_id, challenge_activity_resource, validate_settings) do
     method = [method: :post]
     url = [url: "/challenges/#{challenge_id}/activities"]
-    query_params = [query: [{:"validateSettings", validate_settings}]]
+    query_params = [query: [{:"validate_settings", validate_settings}]]
     header_params = []
     body_params = [body: challenge_activity_resource]
     form_params = []
@@ -393,10 +393,10 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsChallenges do
 
   A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
   """
-  def update_challenge_activity(id, challenge_id, challenge_activity_resource) do
+  def update_challenge_activity(id, challenge_id, challenge_activity_resource, validate_settings) do
     method = [method: :put]
     url = [url: "/challenges/{challenge_id}/activities/#{id}"]
-    query_params = []
+    query_params = [query: [{:"validateSettings", validate_settings}]]
     header_params = []
     body_params = [body: challenge_activity_resource]
     form_params = []
