@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilHealth do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """

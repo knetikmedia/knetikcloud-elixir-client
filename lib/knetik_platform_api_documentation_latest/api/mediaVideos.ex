@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
@@ -142,6 +142,25 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   end
 
   @doc """
+  Create a video template
+
+  Video Templates define a type of video and the properties they have
+  """
+  def create_video_template(video_template_resource) do
+    method = [method: :post]
+    url = [url: "/media/videos/templates"]
+    query_params = []
+    header_params = []
+    body_params = [body: video_template_resource]
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
   Deletes a video from the system if no resources are attached to it
 
   
@@ -237,6 +256,25 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   end
 
   @doc """
+  Delete a video template
+
+  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  """
+  def delete_video_template(id, cascade) do
+    method = [method: :delete]
+    url = [url: "/media/videos/templates/#{id}"]
+    query_params = [query: [{:"cascade", cascade}]]
+    header_params = []
+    body_params = []
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
   Get user videos
 
   
@@ -321,6 +359,44 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
     method = [method: :get]
     url = [url: "/media/videos/#{video_id}/related"]
     query_params = [query: [{:"size", size}, {:"page", page}]]
+    header_params = []
+    body_params = []
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
+  Get a single video template
+
+  
+  """
+  def get_video_template(id) do
+    method = [method: :get]
+    url = [url: "/media/videos/templates/#{id}"]
+    query_params = []
+    header_params = []
+    body_params = []
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
+  List and search video templates
+
+  
+  """
+  def get_video_templates(size, page, order) do
+    method = [method: :get]
+    url = [url: "/media/videos/templates"]
+    query_params = [query: [{:"size", size}, {:"page", page}, {:"order", order}]]
     header_params = []
     body_params = []
     form_params = []
@@ -437,6 +513,25 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
     query_params = []
     header_params = []
     body_params = [body: details]
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
+  Update a video template
+
+  
+  """
+  def update_video_template(id, video_template_resource) do
+    method = [method: :put]
+    url = [url: "/media/videos/templates/#{id}"]
+    query_params = []
+    header_params = []
+    body_params = [body: video_template_resource]
     form_params = []
     params = query_params ++ header_params ++ body_params ++ form_params
     opts = []

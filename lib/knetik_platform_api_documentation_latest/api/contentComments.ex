@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ContentComments do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
@@ -76,25 +76,6 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ContentComments do
     query_params = [query: [{:"context", context}, {:"context_id", context_id}, {:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []
-    form_params = []
-    params = query_params ++ header_params ++ body_params ++ form_params
-    opts = []
-    options = method ++ url ++ params ++ opts
-
-    request(options)
-  end
-
-  @doc """
-  Search the comment index
-
-  The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-  """
-  def search_comments(query, size, page) do
-    method = [method: :post]
-    url = [url: "/comments/search"]
-    query_params = [query: [{:"size", size}, {:"page", page}]]
-    header_params = []
-    body_params = [body: query]
     form_params = []
     params = query_params ++ header_params ++ body_params ++ form_params
     opts = []
