@@ -51,10 +51,10 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Currencies do
 
   
   """
-  def get_currencies(filter_enabled_currencies, filter_type, size, page, order) do
+  def get_currencies(filter_default, filter_enabled_currencies, filter_type, size, page, order) do
     method = [method: :get]
     url = [url: "/currencies"]
-    query_params = [query: [{:"filter_enabled_currencies", filter_enabled_currencies}, {:"filter_type", filter_type}, {:"size", size}, {:"page", page}, {:"order", order}]]
+    query_params = [query: [{:"filter_default", filter_default}, {:"filter_enabled_currencies", filter_enabled_currencies}, {:"filter_type", filter_type}, {:"size", size}, {:"page", page}, {:"order", order}]]
     header_params = []
     body_params = []
     form_params = []

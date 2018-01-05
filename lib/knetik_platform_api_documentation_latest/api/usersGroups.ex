@@ -104,9 +104,9 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersGroups do
   end
 
   @doc """
-  Removes a group from the system IF no resources are attached to it
+  Removes a group from the system
 
-  
+  All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
   """
   def delete_group(unique_name) do
     method = [method: :delete]
@@ -168,6 +168,25 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersGroups do
   def get_group(unique_name) do
     method = [method: :get]
     url = [url: "/users/groups/#{unique_name}"]
+    query_params = []
+    header_params = []
+    body_params = []
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
+  Get group ancestors
+
+  Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+  """
+  def get_group_ancestors(unique_name) do
+    method = [method: :get]
+    url = [url: "/users/groups/#{unique_name}/ancestors"]
     query_params = []
     header_params = []
     body_params = []
@@ -353,7 +372,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersGroups do
   @doc """
   Update a group
 
-  
+  If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
   """
   def update_group(unique_name, group_resource) do
     method = [method: :put]

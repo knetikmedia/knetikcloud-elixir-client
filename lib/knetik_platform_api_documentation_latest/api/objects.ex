@@ -165,7 +165,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Objects do
 
   
   """
-  def update_object_item(template_id, entitlement_id, cascade, object_item) do
+  def update_object_item(template_id, object_id, cascade, object_item) do
     method = [method: :put]
     url = [url: "/objects/{template_id}/#{object_id}"]
     query_params = [query: [{:"cascade", cascade}]]
