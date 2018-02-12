@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a reward set
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
   """
   def create_reward_set(reward_set_resource) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
   @doc """
   Delete a reward set
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
   """
   def delete_reward_set(id) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
   @doc """
   Get a single reward set
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_reward_set(id) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
   @doc """
   List and search reward sets
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_reward_sets(size, page, order) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.CampaignsRewards do
   @doc """
   Update a reward set
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
   """
   def update_reward_set(id, reward_set_resource) do
     method = [method: :put]

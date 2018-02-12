@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsApple do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Pay invoice with Apple receipt
 
-  Mark an invoice paid using Apple payment receipt. A receipt will only be accepted once and the details of the transaction must match the invoice, including the product_id matching the sku text of the item in the invoice. Returns the transaction ID if successful.
+  Mark an invoice paid using Apple payment receipt. A receipt will only be accepted once and the details of the transaction must match the invoice, including the product_id matching the sku text of the item in the invoice. Returns the transaction ID if successful. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def verify_apple_receipt(request) do
     method = [method: :post]

@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineTriggers do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a trigger
 
-  Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+  Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   """
   def create_bre_trigger(bre_trigger_resource) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineTriggers do
   @doc """
   Delete a trigger
 
-  May fail if there are existing rules against it. Cannot delete core triggers
+  May fail if there are existing rules against it. Cannot delete core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   """
   def delete_bre_trigger(event_name) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineTriggers do
   @doc """
   Get a single trigger
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
   """
   def get_bre_trigger(event_name) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineTriggers do
   @doc """
   List triggers
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
   """
   def get_bre_triggers(filter_system, filter_category, filter_tags, filter_name, filter_search, size, page) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineTriggers do
   @doc """
   Update a trigger
 
-  May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+  May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
   """
   def update_bre_trigger(event_name, bre_trigger_resource) do
     method = [method: :put]

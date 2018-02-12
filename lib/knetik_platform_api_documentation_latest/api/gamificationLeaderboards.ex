@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationLeaderboards do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Retrieves leaderboard details and paginated entries
 
-  The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource.
+  The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_leaderboard(context_type, context_id, size, page, order) do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationLeaderboards do
   @doc """
   Retrieves a specific user entry with rank
 
-  The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
+  The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_leaderboard_rank(context_type, context_id, id) do
     method = [method: :get]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationLeaderboards do
   @doc """
   Get a list of available leaderboard strategy names
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_leaderboard_strategies() do
     method = [method: :get]

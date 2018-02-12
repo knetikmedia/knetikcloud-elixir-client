@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilHealth do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Get health info
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_health() do
     method = [method: :get]

@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a new role
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def create_role(role_resource) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Delete a role
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def delete_role(role, force) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Get roles for a client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def get_client_roles(client_key) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Get a single role
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def get_role(role) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   List and search roles
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def get_roles(filter_name, filter_role, size, page, order) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Get roles for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def get_user_roles(user_id) do
     method = [method: :get]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Set roles for a client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def set_client_roles(client_key, roles_list) do
     method = [method: :put]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Set permissions for a role
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def set_permissions_for_role(role, permissions_list) do
     method = [method: :put]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Set roles for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def set_user_roles(user_id, roles_list) do
     method = [method: :put]
@@ -182,7 +182,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthRoles do
   @doc """
   Update a role
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
   """
   def update_role(role, role_resource) do
     method = [method: :put]

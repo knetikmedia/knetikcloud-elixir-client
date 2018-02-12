@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsTransactions do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Get the details for a single transaction
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
   """
   def get_transaction(id) do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsTransactions do
   @doc """
   List and search transactions
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
   """
   def get_transactions(filter_invoice, size, page, order) do
     method = [method: :get]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsTransactions do
   @doc """
   Refund a payment transaction, in full or in part
 
-  Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+  Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
   """
   def refund_transaction(id, request) do
     method = [method: :post]

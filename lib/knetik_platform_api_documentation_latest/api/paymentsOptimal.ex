@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsOptimal do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Initiate silent post with Optimal
 
-  Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details.
+  Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; OPTIMAL_ADMIN or owner
   """
   def silent_post_optimal(request) do
     method = [method: :post]

@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilSecurity do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Returns the authentication log for a user
 
-  A log entry is recorded everytime a user requests a new token. Standard pagination available
+  A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
   """
   def get_user_location_log(user_id, size, page, order) do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UtilSecurity do
   @doc """
   Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
   """
   def get_user_token_details() do
     method = [method: :get]

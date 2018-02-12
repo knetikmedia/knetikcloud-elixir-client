@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.TemplatesProperties do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Get details for a template property type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_template_property_type(type) do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.TemplatesProperties do
   @doc """
   List template property types
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_template_property_types() do
     method = [method: :get]

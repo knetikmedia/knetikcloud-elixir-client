@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingOrders do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Retrieve invoice counts aggregated by time ranges
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
   """
   def get_invoice_reports(currency_code, granularity, filter_payment_status, filter_fulfillment_status, start_date, end_date, size, page) do
     method = [method: :get]

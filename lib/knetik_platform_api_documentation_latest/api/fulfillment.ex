@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a fulfillment type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   """
   def create_fulfillment_type(type) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
   @doc """
   Delete a fulfillment type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   """
   def delete_fulfillment_type(id) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
   @doc """
   Get a single fulfillment type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_fulfillment_type(id) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
   @doc """
   List and search fulfillment types
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_fulfillment_types(size, page, order) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
   @doc """
   Update a fulfillment type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
   """
   def update_fulfillment_type(id, fulfillment_type) do
     method = [method: :put]

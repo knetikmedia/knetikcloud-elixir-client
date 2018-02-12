@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a sale
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   """
   def create_catalog_sale(catalog_sale) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
   @doc """
   Delete a sale
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   """
   def delete_catalog_sale(id) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
   @doc """
   Get a single sale
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
   """
   def get_catalog_sale(id) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
   @doc """
   List and search sales
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
   """
   def get_catalog_sales(size, page, order) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreSales do
   @doc """
   Update a sale
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
   """
   def update_catalog_sale(id, catalog_sale) do
     method = [method: :put]

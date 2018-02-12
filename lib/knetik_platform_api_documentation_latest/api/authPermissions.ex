@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthPermissions do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a new permission
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   """
   def create_permission(permission_resource) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthPermissions do
   @doc """
   Delete a permission
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   """
   def delete_permission(permission, force) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthPermissions do
   @doc """
   Get a single permission
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   """
   def get_permission(permission) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthPermissions do
   @doc """
   List and search permissions
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   """
   def get_permissions(size, page, order) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthPermissions do
   @doc """
   Update a permission
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
   """
   def update_permission(permission, permission_resource) do
     method = [method: :put]

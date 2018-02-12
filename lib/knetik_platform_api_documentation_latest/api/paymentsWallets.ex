@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsWallets do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Returns the user&#39;s wallet for the given currency code
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   """
   def get_user_wallet(user_id, currency_code) do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsWallets do
   @doc """
   Retrieve a user&#39;s wallet transactions
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   """
   def get_user_wallet_transactions(user_id, currency_code, filter_type, filter_max_date, filter_min_date, filter_sign, size, page, order) do
     method = [method: :get]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsWallets do
   @doc """
   List all of a user&#39;s wallets
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
   """
   def get_user_wallets(user_id) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsWallets do
   @doc """
   Retrieves a summation of wallet balances by currency code
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   """
   def get_wallet_balances() do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsWallets do
   @doc """
   Retrieve wallet transactions across the system
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   """
   def get_wallet_transactions(filter_invoice, filter_type, filter_date, filter_sign, filter_user_id, filter_username, filter_details, filter_currency_code, size, page, order) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsWallets do
   @doc """
   Retrieve a list of wallets across the system
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   """
   def get_wallets(size, page, order) do
     method = [method: :get]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsWallets do
   @doc """
   Updates the balance for a user&#39;s wallet
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
   """
   def update_wallet_balance(user_id, currency_code, request) do
     method = [method: :put]

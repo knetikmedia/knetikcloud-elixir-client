@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Adds a user to a video&#39;s whitelist
 
-  Whitelisted users can view video regardless of privacy setting.
+  Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def add_user_to_video_whitelist(id, user_id) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Adds a new video in the system
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def add_video(video_resource) do
     method = [method: :post]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Add a new video comment
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def add_video_comment(video_id, comment_resource) do
     method = [method: :post]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Adds a contributor to a video
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def add_video_contributor(video_id, contribution_resource) do
     method = [method: :post]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Add a new flag
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def add_video_flag(video_id, reason) do
     method = [method: :post]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Adds one or more existing videos as related to this one
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def add_video_relationships(video_id, video_relationship_resource) do
     method = [method: :post]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Create a video disposition
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def create_video_disposition(video_id, disposition_resource) do
     method = [method: :post]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Create a video template
 
-  Video Templates define a type of video and the properties they have
+  Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def create_video_template(video_template_resource) do
     method = [method: :post]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Deletes a video from the system if no resources are attached to it
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def delete_video(id) do
     method = [method: :delete]
@@ -182,7 +182,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Delete a video comment
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def delete_video_comment(video_id, id) do
     method = [method: :delete]
@@ -201,7 +201,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Delete a video disposition
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def delete_video_disposition(disposition_id) do
     method = [method: :delete]
@@ -220,7 +220,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Delete a flag
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def delete_video_flag(video_id) do
     method = [method: :delete]
@@ -239,7 +239,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Delete a video&#39;s relationship
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def delete_video_relationship(video_id, id) do
     method = [method: :delete]
@@ -258,7 +258,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Delete a video template
 
-  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def delete_video_template(id, cascade) do
     method = [method: :delete]
@@ -277,7 +277,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Get user videos
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def get_user_videos(user_id, exclude_flagged, size, page) do
     method = [method: :get]
@@ -296,7 +296,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Loads a specific video details
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def get_video(id) do
     method = [method: :get]
@@ -315,7 +315,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Returns a page of comments for a video
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_video_comments(video_id, size, page) do
     method = [method: :get]
@@ -334,7 +334,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Returns a page of dispositions for a video
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_video_dispositions(video_id, size, page) do
     method = [method: :get]
@@ -353,7 +353,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Returns a page of video relationships
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_video_relationships(video_id, size, page) do
     method = [method: :get]
@@ -372,7 +372,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Get a single video template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
   """
   def get_video_template(id) do
     method = [method: :get]
@@ -391,7 +391,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   List and search video templates
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
   """
   def get_video_templates(size, page, order) do
     method = [method: :get]
@@ -410,7 +410,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Search videos using the documented filters
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_videos(exclude_flagged, filter_videos_by_uploader, filter_category, filter_tagset, filter_videos_by_name, filter_videos_by_contributor, filter_videos_by_author, filter_has_author, filter_has_uploader, filter_related_to, filter_friends, filter_disposition, size, page, order) do
     method = [method: :get]
@@ -429,7 +429,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Removes a user from a video&#39;s whitelist
 
-  Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+  Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def remove_user_from_video_whitelist(video_id, id) do
     method = [method: :delete]
@@ -448,7 +448,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Removes a contributor from a video
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def remove_video_contributor(video_id, id) do
     method = [method: :delete]
@@ -467,7 +467,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Modifies a video&#39;s details
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def update_video(id, video_resource) do
     method = [method: :put]
@@ -486,7 +486,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Update a video comment
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def update_video_comment(video_id, id, content) do
     method = [method: :put]
@@ -505,7 +505,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Update a video&#39;s relationship details
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
   """
   def update_video_relationship(video_id, relationship_id, details) do
     method = [method: :put]
@@ -524,7 +524,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Update a video template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def update_video_template(id, video_template_resource) do
     method = [method: :put]
@@ -543,7 +543,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaVideos do
   @doc """
   Increment a video&#39;s view count
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def view_video(id) do
     method = [method: :post]

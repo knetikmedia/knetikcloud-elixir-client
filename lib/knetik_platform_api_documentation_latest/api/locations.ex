@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Locations do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Get a list of countries
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_countries() do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Locations do
   @doc """
   Get the iso3 code of your country
 
-  Determined by geo ip location
+  Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_country_by_geo_location() do
     method = [method: :get]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Locations do
   @doc """
   Get a list of a country&#39;s states
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_country_states(country_code_iso3) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Locations do
   @doc """
   Get the currency information of your country
 
-  Determined by geo ip location, currency to country mapping and a fallback setting
+  Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_currency_by_geo_location() do
     method = [method: :get]

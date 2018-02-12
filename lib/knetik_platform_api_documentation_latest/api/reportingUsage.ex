@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Returns aggregated endpoint usage information by day
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   """
   def get_usage_by_day(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
   @doc """
   Returns aggregated endpoint usage information by hour
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   """
   def get_usage_by_hour(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
   @doc """
   Returns aggregated endpoint usage information by minute
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   """
   def get_usage_by_minute(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
   @doc """
   Returns aggregated endpoint usage information by month
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   """
   def get_usage_by_month(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
   @doc """
   Returns aggregated endpoint usage information by year
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   """
   def get_usage_by_year(start_date, end_date, combine_endpoints, method, url, size, page) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsage do
   @doc """
   Returns list of endpoints called (method and url)
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
   """
   def get_usage_endpoints(start_date, end_date) do
     method = [method: :get]

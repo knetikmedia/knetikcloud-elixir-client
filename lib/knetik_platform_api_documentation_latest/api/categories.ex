@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a new category
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   """
   def create_category(category) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   Create a category template
 
-  Templates define a type of category and the properties they have
+  Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def create_category_template(template) do
     method = [method: :post]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   Delete an existing category
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   """
   def delete_category(id) do
     method = [method: :delete]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   Delete a category template
 
-  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def delete_category_template(id, cascade) do
     method = [method: :delete]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   List and search categories with optional filters
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_categories(filter_search, filter_active, size, page, order) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   Get a single category
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_category(id) do
     method = [method: :get]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   Get a single category template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
   """
   def get_category_template(id) do
     method = [method: :get]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   List and search category templates
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
   """
   def get_category_templates(size, page, order) do
     method = [method: :get]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   List all trivia tags in the system
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_tags(size, page) do
     method = [method: :get]
@@ -182,7 +182,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   Update an existing category
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
   """
   def update_category(id, category) do
     method = [method: :put]
@@ -201,7 +201,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Categories do
   @doc """
   Update a category template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def update_category_template(id, template) do
     method = [method: :put]

@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a new payment method for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   """
   def create_payment_method(user_id, payment_method) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Delete an existing payment method for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   """
   def delete_payment_method(user_id, id) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Get a single payment method for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   """
   def get_payment_method(user_id, id) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Get a single payment method type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_payment_method_type(id) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Get all payment method types
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_payment_method_types(filter_name, size, page, order) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Get all payment methods for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   """
   def get_payment_methods(user_id, filter_name, filter_payment_type, filter_payment_method_type_id, filter_payment_method_type_name, size, page, order) do
     method = [method: :get]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Authorize payment of an invoice for later capture
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
   """
   def payment_authorization(request) do
     method = [method: :post]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Capture an existing invoice payment authorization
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
   """
   def payment_capture(id) do
     method = [method: :post]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Payments do
   @doc """
   Update an existing payment method for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
   """
   def update_payment_method(user_id, id, payment_method) do
     method = [method: :put]

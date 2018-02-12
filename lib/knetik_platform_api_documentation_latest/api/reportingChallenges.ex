@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingChallenges do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Retrieve a challenge event leaderboard details
 
-  Lists all leaderboard entries with additional user details
+  Lists all leaderboard entries with additional user details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
   """
   def get_challenge_event_leaderboard(filter_event, size, page, order) do
     method = [method: :get]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingChallenges do
   @doc """
   Retrieve a challenge event participant details
 
-  Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
+  Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
   """
   def get_challenge_event_participants(filter_event, size, page, order) do
     method = [method: :get]

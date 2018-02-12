@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.ReportingUsers do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Get user registration info
 
-  Get user registration counts grouped by time range
+  Get user registration counts grouped by time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_USER_ADMIN
   """
   def get_user_registrations(granularity, start_date, end_date, size, page) do
     method = [method: :get]

@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.SocialFacebook do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Link facebook account
 
-  Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+  Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-facebook user token
   """
   def link_accounts(facebook_token) do
     method = [method: :post]

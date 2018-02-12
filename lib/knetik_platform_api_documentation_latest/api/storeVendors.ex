@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a vendor
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   """
   def create_vendor(vendor) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   Create a vendor template
 
-  Vendor Templates define a type of vendor and the properties they have.
+  Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def create_vendor_template(vendor_template_resource) do
     method = [method: :post]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   Delete a vendor
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   """
   def delete_vendor(id) do
     method = [method: :delete]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   Delete a vendor template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def delete_vendor_template(id, cascade) do
     method = [method: :delete]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   Get a single vendor
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_vendor(id) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   Get a single vendor template
 
-  Vendor Templates define a type of vendor and the properties they have.
+  Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def get_vendor_template(id) do
     method = [method: :get]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   List and search vendor templates
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def get_vendor_templates(size, page, order) do
     method = [method: :get]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   List and search vendors
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_vendors(filter_name, size, page, order) do
     method = [method: :get]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   Update a vendor
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
   """
   def update_vendor(id, vendor) do
     method = [method: :put]
@@ -182,7 +182,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreVendors do
   @doc """
   Update a vendor template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def update_vendor_template(id, vendor_template_resource) do
     method = [method: :put]

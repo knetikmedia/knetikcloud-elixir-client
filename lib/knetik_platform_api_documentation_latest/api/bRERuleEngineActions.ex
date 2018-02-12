@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.BRERuleEngineActions do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Get a list of available actions
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
   """
   def get_bre_actions(filter_category, filter_name, filter_tags, filter_search) do
     method = [method: :get]

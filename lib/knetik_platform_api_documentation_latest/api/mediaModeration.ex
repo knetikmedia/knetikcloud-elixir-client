@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaModeration do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Add a flag
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def add_flag(flag_resource) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaModeration do
   @doc """
   Delete a flag
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
   """
   def delete_flag(context_name, context_id, user_id) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaModeration do
   @doc """
   Returns a page of flags
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
   """
   def get_flags(filter_context, filter_context_id, filter_user_id, size, page) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaModeration do
   @doc """
   Get a flag report
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   """
   def get_moderation_report(id) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaModeration do
   @doc """
   Returns a page of flag reports
 
-  Context can be either a free-form string or a pre-defined context name
+  Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   """
   def get_moderation_reports(exclude_resolved, filter_context, filter_context_id, size, page) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.MediaModeration do
   @doc """
   Update a flag report
 
-  Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+  Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
   """
   def update_moderation_report(id, flag_report_resource) do
     method = [method: :put]

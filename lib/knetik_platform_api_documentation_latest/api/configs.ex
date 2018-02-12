@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Configs do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a new config
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
   """
   def create_config(config) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Configs do
   @doc """
   Delete an existing config
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
   """
   def delete_config(name) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Configs do
   @doc """
   Get a single config
 
-  Only configs that are public readable will be shown without admin access
+  Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_config(name) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Configs do
   @doc """
   List and search configs
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_configs(filter_search, size, page, order) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Configs do
   @doc """
   Update an existing config
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
   """
   def update_config(name, config) do
     method = [method: :put]

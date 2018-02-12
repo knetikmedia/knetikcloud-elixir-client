@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.PaymentsXsolla do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a payment token that should be used to forward the user to Xsolla so they can complete payment
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
   """
   def create_xsolla_token_url(request) do
     method = [method: :post]

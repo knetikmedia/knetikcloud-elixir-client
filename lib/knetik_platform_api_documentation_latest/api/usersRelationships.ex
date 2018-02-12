@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a user relationship
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   """
   def create_user_relationship(relationship) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
   @doc """
   Delete a user relationship
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   """
   def delete_user_relationship(id) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
   @doc """
   Get a user relationship
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
   """
   def get_user_relationship(id) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
   @doc """
   Get a list of user relationships
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
   """
   def get_user_relationships(size, page, order) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.UsersRelationships do
   @doc """
   Update a user relationship
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
   """
   def update_user_relationship(id, relationship) do
     method = [method: :put]

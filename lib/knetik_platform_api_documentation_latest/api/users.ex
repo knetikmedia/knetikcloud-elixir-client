@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Add a tag to a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
   """
   def add_user_tag(user_id, tag) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Create a user template
 
-  User Templates define a type of user and the properties they have
+  User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def create_user_template(user_template_resource) do
     method = [method: :post]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Delete a user template
 
-  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def delete_user_template(id, cascade) do
     method = [method: :delete]
@@ -66,9 +66,28 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   end
 
   @doc """
+  Get a list of direct messages with this user
+
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+  """
+  def get_direct_messages1(recipient_id, size, page) do
+    method = [method: :get]
+    url = [url: "/users/users/#{recipient_id}/messages"]
+    query_params = [query: [{:"size", size}, {:"page", page}]]
+    header_params = []
+    body_params = []
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
   Get a single user
 
-  Additional private info is included as USERS_ADMIN
+  Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_user(id) do
     method = [method: :get]
@@ -87,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   List tags for a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
   """
   def get_user_tags(user_id) do
     method = [method: :get]
@@ -106,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Get a single user template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
   """
   def get_user_template(id) do
     method = [method: :get]
@@ -125,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   List and search user templates
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
   """
   def get_user_templates(size, page, order) do
     method = [method: :get]
@@ -144,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   List and search users
 
-  Additional private info is included as USERS_ADMIN
+  Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_users(filter_displayname, filter_email, filter_firstname, filter_fullname, filter_lastname, filter_username, filter_tag, filter_group, filter_role, filter_last_activity, filter_id_list, filter_search, size, page, order) do
     method = [method: :get]
@@ -163,7 +182,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Choose a new password after a reset
 
-  Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+  Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def password_reset(id, new_password_request) do
     method = [method: :put]
@@ -180,9 +199,28 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   end
 
   @doc """
+  Send a user message
+
+  
+  """
+  def post_user_message(recipient_id, chat_message_request) do
+    method = [method: :post]
+    url = [url: "/users/#{recipient_id}/messages"]
+    query_params = []
+    header_params = []
+    body_params = [body: chat_message_request]
+    form_params = []
+    params = query_params ++ header_params ++ body_params ++ form_params
+    opts = []
+    options = method ++ url ++ params ++ opts
+
+    request(options)
+  end
+
+  @doc """
   Register a new user
 
-  Password should be in plain text and will be encrypted on receipt. Use SSL for security
+  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def register_user(user_resource) do
     method = [method: :post]
@@ -201,7 +239,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Remove a tag from a user
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
   """
   def remove_user_tag(user_id, tag) do
     method = [method: :delete]
@@ -220,7 +258,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Set a user&#39;s password
 
-  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
   """
   def set_password(id, password) do
     method = [method: :put]
@@ -239,7 +277,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Reset a user&#39;s password
 
-  A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+  A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def start_password_reset(id) do
     method = [method: :post]
@@ -258,7 +296,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Reset a user&#39;s password without user id
 
-  A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+  A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def submit_password_reset(password_reset) do
     method = [method: :post]
@@ -277,7 +315,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Update a user
 
-  Password will not be edited on this endpoint, use password specific endpoints.
+  Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
   """
   def update_user(id, user_resource) do
     method = [method: :put]
@@ -296,7 +334,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   @doc """
   Update a user template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def update_user_template(id, user_template_resource) do
     method = [method: :put]

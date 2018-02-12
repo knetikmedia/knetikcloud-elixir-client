@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a shipping item
 
-  A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+  A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   """
   def create_shipping_item(cascade, shipping_item) do
     method = [method: :post]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
   @doc """
   Delete a shipping item
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   """
   def delete_shipping_item(id) do
     method = [method: :delete]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
   @doc """
   Delete a shipping template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def delete_shipping_template(id, cascade) do
     method = [method: :delete]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
   @doc """
   Get a single shipping item
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
   def get_shipping_item(id) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
   @doc """
   Get a single shipping template
 
-  Shipping Templates define a type of shipping and the properties they have.
+  Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
   """
   def get_shipping_template(id) do
     method = [method: :get]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
   @doc """
   List and search shipping templates
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
   """
   def get_shipping_templates(size, page, order) do
     method = [method: :get]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
   @doc """
   Update a shipping item
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
   """
   def update_shipping_item(id, cascade, shipping_item) do
     method = [method: :put]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.StoreShipping do
   @doc """
   Update a shipping template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def update_shipping_template(id, shipping_template_resource) do
     method = [method: :put]

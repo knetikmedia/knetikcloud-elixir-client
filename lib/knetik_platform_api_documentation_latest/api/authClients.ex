@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a new client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def create_client(client_resource) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   @doc """
   Delete a client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def delete_client(client_key) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   @doc """
   Get a single client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def get_client(client_key) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   @doc """
   List available client grant types
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def get_client_grant_types() do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   @doc """
   List and search clients
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def get_clients(size, page, order) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   @doc """
   Set grant types for a client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def set_client_grant_types(client_key, grant_list) do
     method = [method: :put]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   @doc """
   Set redirect uris for a client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def set_client_redirect_uris(client_key, redirect_list) do
     method = [method: :put]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.AuthClients do
   @doc """
   Update a client
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
   """
   def update_client(client_key, client_resource) do
     method = [method: :put]

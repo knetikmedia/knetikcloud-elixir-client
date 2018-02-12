@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://devsandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Add an answer to a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def add_question_answers(question_id, answer) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Add a tag to a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def add_question_tag(id, tag) do
     method = [method: :post]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Add a tag to a batch of questions
 
-  All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+  All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def add_tag_to_questions_batch(tag, filter_search, filter_idset, filter_category, filter_tag, filter_tagset, filter_type, filter_published, filter_import_id) do
     method = [method: :post]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Create an import job
 
-  Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+  Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def create_import_job(request) do
     method = [method: :post]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Create a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def create_question(question) do
     method = [method: :post]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Create a question template
 
-  Question templates define a type of question and the properties they have
+  Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def create_question_template(question_template_resource) do
     method = [method: :post]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Delete an import job
 
-  Also deletes all questions that were imported by it
+  Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def delete_import_job(id) do
     method = [method: :delete]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Delete a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def delete_question(id) do
     method = [method: :delete]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Remove an answer from a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def delete_question_answers(question_id, id) do
     method = [method: :delete]
@@ -182,7 +182,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Delete a question template
 
-  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+  If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def delete_question_template(id, cascade) do
     method = [method: :delete]
@@ -201,7 +201,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Get an import job
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_import_job(id) do
     method = [method: :get]
@@ -220,7 +220,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Get a list of import job
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_import_jobs(filter_vendor, filter_category, filter_name, filter_status, size, page, order) do
     method = [method: :get]
@@ -239,7 +239,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Get a single question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_question(id) do
     method = [method: :get]
@@ -258,7 +258,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Get an answer for a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_question_answer(question_id, id) do
     method = [method: :get]
@@ -277,7 +277,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   List the answers available for a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_question_answers(question_id) do
     method = [method: :get]
@@ -296,7 +296,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   List question deltas in ascending order of updated date
 
-  The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+  The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_question_deltas(since) do
     method = [method: :get]
@@ -315,7 +315,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   List the tags for a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_question_tags(id) do
     method = [method: :get]
@@ -334,7 +334,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Get a single question template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
   """
   def get_question_template(id) do
     method = [method: :get]
@@ -353,7 +353,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   List and search question templates
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
   """
   def get_question_templates(size, page, order) do
     method = [method: :get]
@@ -372,7 +372,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   List and search questions
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_questions(size, page, order, filter_search, filter_idset, filter_category, filter_tagset, filter_tag, filter_type, filter_published, filter_import_id) do
     method = [method: :get]
@@ -391,7 +391,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Count questions based on filters
 
-  This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+  This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def get_questions_count(filter_search, filter_idset, filter_category, filter_tag, filter_tagset, filter_type, filter_published) do
     method = [method: :get]
@@ -410,7 +410,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Start processing an import job
 
-  Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+  Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def process_import_job(id, publish_now) do
     method = [method: :post]
@@ -429,7 +429,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Remove a tag from a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def remove_question_tag(id, tag) do
     method = [method: :delete]
@@ -448,7 +448,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Remove a tag from a batch of questions
 
-  ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+  ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def remove_tag_to_questions_batch(tag, filter_search, filter_idset, filter_category, filter_tag, filter_tagset, filter_type, filter_published, filter_import_id) do
     method = [method: :delete]
@@ -467,7 +467,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   List and search tags by the beginning of the string
 
-  For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+  For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def search_question_tags(filter_search, filter_category, filter_import_id) do
     method = [method: :get]
@@ -486,7 +486,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Update an import job
 
-  Changes should be made before process is started for there to be any effect.
+  Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def update_import_job(id, request) do
     method = [method: :put]
@@ -505,7 +505,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Update a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def update_question(id, question) do
     method = [method: :put]
@@ -524,7 +524,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Update an answer for a question
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def update_question_answer(question_id, id, answer) do
     method = [method: :put]
@@ -543,7 +543,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Update a question template
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
   """
   def update_question_template(id, question_template_resource) do
     method = [method: :put]
@@ -562,7 +562,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.GamificationTrivia do
   @doc """
   Bulk update questions
 
-  Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+  Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
   """
   def update_questions_in_bulk(question, filter_search, filter_idset, filter_category, filter_tagset, filter_type, filter_published, filter_import_id) do
     method = [method: :put]
