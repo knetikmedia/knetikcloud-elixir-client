@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Configs do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://jsapi-integration.us-east-1.elasticbeanstalk.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a new config
 
-  &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
   """
   def create_config(config) do
     method = [method: :post]

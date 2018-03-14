@@ -5,13 +5,13 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://jsapi-integration.us-east-1.elasticbeanstalk.com"
   plug Tesla.Middleware.JSON
 
   @doc """
   Create a notification type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   """
   def create_notification_type(notification_type) do
     method = [method: :post]
@@ -30,7 +30,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   Delete a notification type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   """
   def delete_notification_type(id) do
     method = [method: :delete]
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   Get a single notification type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   """
   def get_notification_type(id) do
     method = [method: :get]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   List and search notification types
 
-  Get a list of notification type with optional filtering
+  Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   """
   def get_notification_types(size, page, order) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   View a user&#39;s notification settings for a type
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   """
   def get_user_notification_info(type_id, user_id) do
     method = [method: :get]
@@ -106,7 +106,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   View a user&#39;s notification settings
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   """
   def get_user_notification_info_list(user_id, size, page, order) do
     method = [method: :get]
@@ -125,7 +125,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   Get notifications
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   """
   def get_user_notifications(id, filter_status, size, page, order) do
     method = [method: :get]
@@ -144,7 +144,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   Send a notification
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   """
   def send_notification(notification) do
     method = [method: :post]
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   Set notification status
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   """
   def set_user_notification_status(user_id, notification_id, notification) do
     method = [method: :put]
@@ -182,7 +182,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   Enable or disable direct notifications for a user
 
-  Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+  Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
   """
   def silence_direct_notifications(type_id, user_id, silenced) do
     method = [method: :put]
@@ -201,7 +201,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Notifications do
   @doc """
   Update a notificationType
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
   """
   def update_notification_type(id, notification_type) do
     method = [method: :put]

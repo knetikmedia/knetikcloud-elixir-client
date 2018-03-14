@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Chat do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://jsapi-integration.us-east-1.elasticbeanstalk.com"
   plug Tesla.Middleware.JSON
 
   @doc """
@@ -222,7 +222,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Chat do
 
   &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
   """
-  def send_message(chat_message_resource) do
+  def send_chat_message(chat_message_resource) do
     method = [method: :post]
     url = [url: "/chat/messages"]
     query_params = []

@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://jsapi-integration.us-east-1.elasticbeanstalk.com"
   plug Tesla.Middleware.JSON
 
   @doc """
@@ -49,7 +49,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
   @doc """
   Delete an existing message template
 
-  &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   """
   def delete_message_template(id) do
     method = [method: :delete]
@@ -68,7 +68,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
   @doc """
   Get a single message template
 
-  &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   """
   def get_message_template(id) do
     method = [method: :get]
@@ -87,7 +87,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
   @doc """
   List and search message templates
 
-  Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   """
   def get_message_templates(filter_tagset, filter_tag_intersection, filter_tag_exclusion, size, page, order) do
     method = [method: :get]
@@ -108,7 +108,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
 
   Sends a message with one or more formats to one or more users. Fill in any message formats desired (email, sms, websockets) and each user will recieve all valid formats. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   """
-  def send_message1(message_resource) do
+  def send_message(message_resource) do
     method = [method: :post]
     url = [url: "/messaging/message"]
     query_params = []
@@ -258,7 +258,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Messaging do
   @doc """
   Update an existing message template
 
-  &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
   """
   def update_message_template(id, message_template_resource) do
     method = [method: :put]

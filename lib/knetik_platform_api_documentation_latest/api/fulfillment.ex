@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Fulfillment do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://jsapi-integration.us-east-1.elasticbeanstalk.com"
   plug Tesla.Middleware.JSON
 
   @doc """

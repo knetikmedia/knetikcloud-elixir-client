@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://jsapi-integration.us-east-1.elasticbeanstalk.com"
   plug Tesla.Middleware.JSON
 
   @doc """
@@ -72,7 +72,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Users do
   """
   def get_direct_messages1(recipient_id, size, page) do
     method = [method: :get]
-    url = [url: "/users/users/#{recipient_id}/messages"]
+    url = [url: "/users/#{recipient_id}/messages"]
     query_params = [query: [{:"size", size}, {:"page", page}]]
     header_params = []
     body_params = []

@@ -5,7 +5,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Activities do
 
   use Tesla
 
-  plug Tesla.Middleware.BaseUrl, "https://sandbox.knetikcloud.com"
+  plug Tesla.Middleware.BaseUrl, "https://jsapi-integration.us-east-1.elasticbeanstalk.com"
   plug Tesla.Middleware.JSON
 
   @doc """
@@ -163,7 +163,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Activities do
   @doc """
   Load a single activity occurrence details
 
-  &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   """
   def get_activity_occurrence_details(activity_occurrence_id) do
     method = [method: :get]
@@ -220,7 +220,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Activities do
   @doc """
   List activity occurrences
 
-  &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   """
   def list_activity_occurrences(filter_activity, filter_status, filter_event, filter_challenge, size, page, order) do
     method = [method: :get]
@@ -258,7 +258,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Activities do
   @doc """
   Sets the status of an activity occurrence to FINISHED and logs metrics
 
-  In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+  In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
   """
   def set_activity_occurrence_results(activity_occurrence_id, activity_occurrence_results) do
     method = [method: :post]
@@ -277,7 +277,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Activities do
   @doc """
   Sets the settings of an activity occurrence
 
-  
+  &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
   """
   def set_activity_occurrence_settings(activity_occurrence_id, settings) do
     method = [method: :put]
@@ -334,7 +334,7 @@ defmodule KnetikPlatformAPIDocumentationLatest.Api.Activities do
   @doc """
   Update the status of an activity occurrence
 
-  If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+  If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
   """
   def update_activity_occurrence_status(activity_occurrence_id, activity_occurrence_status) do
     method = [method: :put]
